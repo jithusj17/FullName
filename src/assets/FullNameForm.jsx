@@ -25,8 +25,6 @@ export default function FullNameForm() {
           onChange={(e) => setFirstName(e.target.value)}
           required
         />
-        <br />
-        <br />
         <input
           type="text"
           placeholder="Last Name"
@@ -34,13 +32,11 @@ export default function FullNameForm() {
           onChange={(e) => setLastName(e.target.value)}
           required
         />
-        <br />
-        <br />
         <button type="submit">Submit</button>
       </form>
 
       {fullName && (
-        <h3 style={{ marginTop: "20px" }}>Full Name: {fullName}</h3>
+        <h3 style={{ marginTop: "20px" }}>Full name: {fullName}</h3>
       )}
     </div>
   );
