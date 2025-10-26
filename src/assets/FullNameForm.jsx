@@ -7,16 +7,16 @@ export default function FullNameForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Only set full name if both fields have values
     if (firstName.trim() && lastName.trim()) {
       setFullName(`${firstName} ${lastName}`);
-    } else {
-      alert("Please fill in both fields");
     }
   };
 
   return (
     <div style={{ textAlign: "center", marginTop: "50px" }}>
       <h2>Enter Your Name</h2>
+
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -25,8 +25,7 @@ export default function FullNameForm() {
           onChange={(e) => setFirstName(e.target.value)}
           required
         />
-        <br />
-        <br />
+        <br /><br />
         <input
           type="text"
           placeholder="Last Name"
@@ -34,14 +33,12 @@ export default function FullNameForm() {
           onChange={(e) => setLastName(e.target.value)}
           required
         />
-        <br />
-        <br />
+        <br /><br />
         <button type="submit">Submit</button>
       </form>
 
-      {fullName && (
-        <h3 style={{ marginTop: "20px" }}>Full Name: {fullName}</h3>
-      )}
+     
+      {fullName && <h3>Full name: {fullName}</h3>}
     </div>
   );
 }
